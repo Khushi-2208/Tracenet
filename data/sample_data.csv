@@ -1,41 +1,13 @@
 username,pgp_key,wallet_id,domain,text,timestamp,source
-ShadowX,PGP_KEY_001_ALPHA,WALLET_BTC_9901_SEC,darkmarket-x.onion,"I can provide access to high performance bulletproof servers with zero logging and maximum bandwidth.",2026-01-10T14:32:00,forum_alpha
-DarkWolf,PGP_KEY_001_ALPHA,WALLET_BTC_9901_SEC,darkmarket-x.onion,"Providing high speed bulletproof server access, full RDP root access, zero log policy and high bandwidth.",2026-01-15T09:21:10,forum_beta
-ShadowX,PGP_KEY_001_ALPHA,WALLET_BTC_9901_SEC,market.onion,"Need bulletproof hosting or dedicated RDP servers with unlimited bandwidth? Send PM for custom quotes.",2026-01-18T18:45:00,market_main
-DarkWolf,PGP_KEY_001_ALPHA,WALLET_BTC_9901_SEC,market.onion,"Offering dedicated server root access and bulletproof hosting options. Guaranteed zero logs and maximum uptime.",2026-01-20T11:05:30,market_main
-ShadowX,PGP_KEY_001_ALPHA,WALLET_BTC_9901_SEC,darkmarket-x.onion,"Updated RDP configurations available now. High bandwidth dedicated servers ready for instant setup.",2026-01-25T16:12:00,forum_alpha
-CipherGhost,PGP_KEY_004_BRAVO,WALLET_XMR_4040_PRIV,blackmarket-v2.onion,"New zero-day vulnerability exploit POC ready for test. SQL injection payload included in repository.",2026-01-12T08:00:00,forum_beta
-PhantomOperator,PGP_KEY_007_CHARLIE,WALLET_XMR_4040_PRIV,blackmarket-v2.onion,"Selling verified zero-day web vulnerability research and SQL injection scripts. Instant digital download.",2026-01-14T22:15:00,forum_beta
-CipherGhost,PGP_KEY_004_BRAVO,WALLET_XMR_4040_PRIV,exploit-hub.onion,"Automated vulnerability scanner for high severity SQL leaks and remote code execution exploits.",2026-01-22T19:30:00,exploit_forum
-PhantomOperator,PGP_KEY_007_CHARLIE,WALLET_XMR_4040_PRIV,blackmarket-v2.onion,"Custom exploit toolkit targeting web applications. Full documentation and payload scripts attached.",2026-01-28T13:40:00,forum_beta
-RedFox,PGP_KEY_009_DELTA,WALLET_BTC_1102_STD,another.onion,"Looking for buyers interested in healthcare database dumps and leaked user credentials.",2026-01-12T10:15:00,forum_alpha
-CyberKnight,PGP_KEY_009_DELTA,WALLET_BTC_8833_ALT,cyberforum.onion,"Fresh credit card logs and dump packages available. Verified balances only.",2026-01-16T15:50:00,forum_gamma
-RedFox,PGP_KEY_009_DELTA,WALLET_BTC_1102_STD,another.onion,"Updated database leak listings available. Contact me via encrypted chat for batch volume discounts.",2026-01-24T09:10:00,forum_alpha
-AnonTrader,PGP_KEY_015_ECHO,WALLET_ETH_5541_PUB,crypto-exchange.onion,"WTS verified crypto accounts and clean mixer vouchers. ESCROW mandatory for all trades.",2026-01-11T12:00:00,exchange_hub
-KryptonUser,PGP_KEY_088_FOXTROT,WALLET_USDT_9099_OFF,privacy-portal.onion,"Offering anonymous prepaid virtual credit cards. Fast processing and clean history.",2026-01-13T17:33:00,privacy_forum
-VortexAdmin,PGP_KEY_011_GOLF,WALLET_BTC_7711_ADM,darkmarket-x.onion,"Official marketplace announcement: escrow rules updated for Q1 2026. Please check sticky posts.",2026-01-01T00:05:00,darkmarket-x.onion
-SpectreSec,PGP_KEY_022_HOTEL,WALLET_XMR_3322_SEC,exploit-hub.onion,"Analysis of recent IoT botnet traffic patterns and DDoS mitigation strategies.",2026-01-05T14:20:00,exploit_forum
-ZeroDayBro,PGP_KEY_033_INDIA,WALLET_BTC_6644_BRO,blackmarket-v2.onion,"Buying unpatched Windows kernel driver exploits. High budget reserved for verified POCs.",2026-01-08T20:10:00,forum_beta
-GhostRider,PGP_KEY_044_JULIET,WALLET_ETH_1122_GHO,another.onion,"Stealth residential proxy network access for automated web crawling and data collection.",2026-01-09T11:45:00,forum_alpha
-NullPointer,PGP_KEY_055_KILO,WALLET_BTC_9988_NUL,cyberforum.onion,"C++ reverse engineering service for obfuscated binaries and malware analysis.",2026-01-17T16:00:00,forum_gamma
-ByteDemon,PGP_KEY_066_LIMA,WALLET_XMR_5566_BYT,exploit-hub.onion,"Fuzzing framework source code release for memory corruption bug discovery.",2026-01-19T13:25:00,exploit_forum
-CryptoVault,PGP_KEY_077_MIKE,WALLET_ETH_7788_CRY,crypto-exchange.onion,"Non-KYC hardware wallet supply and bulk crypto liquidity options.",2026-01-21T07:50:00,exchange_hub
-SatoshiLegacy,PGP_KEY_088_NOVEMBER,WALLET_BTC_4433_SAT,privacy-portal.onion,"Discussion thread on CoinJoin protocols and transaction graph obfuscation methods.",2026-01-23T21:40:00,privacy_forum
-IronShield,PGP_KEY_099_OSCAR,WALLET_USDT_2211_IRO,darkmarket-x.onion,"Encrypted VoIP systems and hardened phone hardware setups for secure comms.",2026-01-26T18:15:00,forum_alpha
-DogeMaster,PGP_KEY_100_PAPA,WALLET_DOGE_9911_DOG,another.onion,"Automated arbitrage bot script for decentralized crypto exchanges.",2026-01-27T10:00:00,forum_alpha
-NEXUS_X,PGP_KEY_101_QUEBEC,WALLET_BTC_3311_NEX,market.onion,"Enterprise data leak indexing engine access available for security researchers.",2026-01-29T14:30:00,market_main
-ApexHacker,PGP_KEY_102_ROMEO,WALLET_XMR_8877_APE,exploit-hub.onion,"Custom rootkit development for Linux servers with stealth process hiding.",2026-01-30T19:00:00,exploit_forum
-SilentStorm,PGP_KEY_103_SIERRA,WALLET_ETH_4499_SIL,blackmarket-v2.onion,"Private VPN nodes with strict no-logs policy hosted in privacy friendly offshore jurisdictions.",2026-01-31T23:10:00,forum_beta
-ShadowX,PGP_KEY_001_ALPHA,WALLET_BTC_9901_SEC,darkmarket-x.onion,"Dedicated bulletproof server infrastructure maintenance completed. All RDP connections active.",2026-02-01T08:30:00,forum_alpha
-DarkWolf,PGP_KEY_001_ALPHA,WALLET_BTC_9901_SEC,darkmarket-x.onion,"High speed bulletproof hosting maintenance completed. All root server access restored smoothly.",2026-02-02T12:00:00,forum_alpha
-CipherGhost,PGP_KEY_004_BRAVO,WALLET_XMR_4040_PRIV,blackmarket-v2.onion,"Refactored remote code execution exploit module for corporate web applications.",2026-02-03T15:45:00,forum_beta
-PhantomOperator,PGP_KEY_007_CHARLIE,WALLET_XMR_4040_PRIV,exploit-hub.onion,"Web application remote execution exploit guide with working payload proof.",2026-02-04T17:20:00,exploit_forum
-RedFox,PGP_KEY_009_DELTA,WALLET_BTC_1102_STD,another.onion,"Batch sale of e-commerce databases and user credentials. Bulk price available.",2026-02-05T11:10:00,forum_alpha
-CyberKnight,PGP_KEY_009_DELTA,WALLET_BTC_8833_ALT,cyberforum.onion,"Fresh credit card logs with CVV dumps. Verified live test authorized.",2026-02-06T14:00:00,forum_gamma
-AnonTrader,PGP_KEY_015_ECHO,WALLET_ETH_5541_PUB,crypto-exchange.onion,"Vouchers for crypto mixer service available now. Escrow accepted.",2026-02-07T09:30:00,exchange_hub
-KryptonUser,PGP_KEY_088_FOXTROT,WALLET_USDT_9099_OFF,privacy-portal.onion,"Virtual credit card balance top-up service active.",2026-02-08T18:00:00,privacy_forum
-VortexAdmin,PGP_KEY_011_GOLF,WALLET_BTC_7711_ADM,darkmarket-x.onion,"Market dispute resolution process guidelines update.",2026-02-09T20:15:00,darkmarket-x.onion
-SpectreSec,PGP_KEY_022_HOTEL,WALLET_XMR_3322_SEC,exploit-hub.onion,"DDoS protection analysis whitepaper released.",2026-02-10T10:00:00,exploit_forum
-ZeroDayBro,PGP_KEY_033_INDIA,WALLET_BTC_6644_BRO,blackmarket-v2.onion,"Buying macOS zero-day vulnerability POCs.",2026-02-11T13:45:00,forum_beta
-GhostRider,PGP_KEY_044_JULIET,WALLET_ETH_1122_GHO,another.onion,"Socks5 residential proxy list update.",2026-02-12T16:30:00,forum_alpha
-NullPointer,PGP_KEY_055_KILO,WALLET_BTC_9988_NUL,cyberforum.onion,"x86/x64 assembly language disassembly service.",2026-02-13T11:20:00,forum_gamma
+ShadowX,PGP_KEY_001,WALLET_BTC_001,darkmarket-x.onion,"High performance servers available with zero logging and maximum bandwidth.",2026-01-10T14:32:00,forum_alpha
+DarkWolf,PGP_KEY_001,WALLET_BTC_001,market.onion,"Providing high speed servers with zero log policy and maximum bandwidth.",2026-01-15T09:21:10,forum_beta
+ShadowX,PGP_KEY_001,WALLET_BTC_001,market.onion,"Dedicated RDP servers available with unlimited bandwidth. Send PM for details.",2026-01-18T18:45:00,market_main
+DarkWolf,PGP_KEY_001,WALLET_BTC_001,darkmarket-x.onion,"Dedicated server access available. Zero logs and high bandwidth guaranteed.",2026-01-20T11:05:30,forum_alpha
+CipherGhost,PGP_KEY_002,WALLET_XMR_002,blackmarket-v2.onion,"SQL injection vulnerability research and proof of concept available.",2026-01-12T08:00:00,forum_beta
+PhantomOperator,PGP_KEY_003,WALLET_XMR_002,blackmarket-v2.onion,"Selling web vulnerability research with SQL injection scripts.",2026-01-14T22:15:00,forum_beta
+CipherGhost,PGP_KEY_002,WALLET_XMR_002,exploit-hub.onion,"Automated scanner for SQL vulnerabilities and remote execution exploits.",2026-01-22T19:30:00,exploit_forum
+RedFox,PGP_KEY_004,WALLET_BTC_003,another.onion,"Looking for buyers interested in database dumps and leaked credentials.",2026-01-12T10:15:00,forum_alpha
+CyberKnight,PGP_KEY_004,WALLET_BTC_004,cyberforum.onion,"Fresh credit card logs and dump packages available.",2026-01-16T15:50:00,forum_gamma
+RedFox,PGP_KEY_004,WALLET_BTC_003,another.onion,"Updated database leak listings available. Contact me for bulk orders.",2026-01-24T09:10:00,forum_alpha
+AnonTrader,PGP_KEY_005,WALLET_ETH_005,crypto-exchange.onion,"Verified crypto accounts and mixer vouchers available. Escrow accepted.",2026-01-11T12:00:00,exchange_hub
+VortexAdmin,PGP_KEY_006,WALLET_BTC_006,darkmarket-x.onion,"Marketplace announcement: escrow rules have been updated for 2026.",2026-01-01T00:05:00,darkmarket-x.onion
