@@ -168,7 +168,7 @@ class AppState:
         timeline = []
         for _, row in df.iterrows():
             timeline.append({
-                "timestamp": str(row["parsed_timestamp"]),
+                "timestamp": row["parsed_timestamp"].isoformat(),
                 "username": row["username"],
                 "domain": row["domain"],
                 "source": row["source"],

@@ -23,6 +23,11 @@ export default function ForceGraph({ data, height = 550, onNodeClick }) {
   const svgRef = useRef(null);
   const tooltipRef = useRef(null);
   const [showPosts, setShowPosts] = useState(false);
+  const onNodeClickRef = useRef(onNodeClick);
+
+  useEffect(() => {
+    onNodeClickRef.current = onNodeClick;
+  }, [onNodeClick]);
 
   useEffect(() => {
     if (!data || !data.nodes || !data.nodes.length) return;
@@ -161,8 +166,8 @@ export default function ForceGraph({ data, height = 550, onNodeClick }) {
       tooltip.style('display', 'none');
     })
     .on('click', (event, d) => {
-      if (onNodeClick && d.type === 'Username') {
-        onNodeClick(d.id);
+      if (onNodeClickRef.current && d.type === 'Username') {
+        onNodeClickRef.current(d.id);
       }
     });
 
@@ -197,7 +202,7 @@ export default function ForceGraph({ data, height = 550, onNodeClick }) {
     }, 1500);
 
     return () => simulation.stop();
-  }, [data, height, showPosts, onNodeClick]);
+  }, [data, height, showPosts]);
 
   return (
     <div className="graph-container" style={{ height: height + 'px', position: 'relative' }}>

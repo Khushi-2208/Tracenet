@@ -14,6 +14,11 @@ export default function InvestigatePage({ stats }) {
   const [actorProfile, setActorProfile] = useState(null);
   const [actorGraph, setActorGraph] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [localQuery, setLocalQuery] = useState(query);
+
+  useEffect(() => {
+    setLocalQuery(query);
+  }, [query]);
 
   useEffect(() => {
     if (query) {
@@ -69,9 +74,9 @@ export default function InvestigatePage({ stats }) {
       <div className="mb-6 flex gap-4">
         <div className="flex-1">
           <SearchBar
-            value={query}
-            onChange={(q) => setSearchParams(q ? { q } : {})}
-            onSearch={() => handleSearch(query)}
+            value={localQuery}
+            onChange={setLocalQuery}
+            onSearch={() => setSearchParams(localQuery ? { q: localQuery } : {})}
           />
         </div>
       </div>

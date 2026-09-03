@@ -13,14 +13,16 @@ export default function ActorProfile({ profile }) {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+      <div className="space-y-4 mt-4">
         {/* PGP Keys */}
         <div>
           <div className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">🔑 PGP Keys</div>
           {profile.pgp_keys?.length > 0 ? (
-            profile.pgp_keys.map((k, i) => (
-              <div key={i} className="bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded px-3 py-1.5 text-sm font-mono mb-1.5">{k}</div>
-            ))
+            <div className="flex flex-wrap gap-1.5">
+              {profile.pgp_keys.map((k, i) => (
+                <div key={i} className="bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded px-3 py-1.5 text-sm font-mono" style={{ wordBreak: 'break-all' }}>{k}</div>
+              ))}
+            </div>
           ) : <div className="text-gray-600 text-sm">None detected</div>}
         </div>
 
@@ -28,9 +30,11 @@ export default function ActorProfile({ profile }) {
         <div>
           <div className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">💳 Crypto Wallets</div>
           {profile.wallets?.length > 0 ? (
-            profile.wallets.map((w, i) => (
-              <div key={i} className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded px-3 py-1.5 text-sm font-mono mb-1.5">{w}</div>
-            ))
+            <div className="flex flex-wrap gap-1.5">
+              {profile.wallets.map((w, i) => (
+                <div key={i} className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded px-3 py-1.5 text-sm font-mono" style={{ wordBreak: 'break-all' }}>{w}</div>
+              ))}
+            </div>
           ) : <div className="text-gray-600 text-sm">None detected</div>}
         </div>
 
@@ -38,15 +42,17 @@ export default function ActorProfile({ profile }) {
         <div>
           <div className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">🌐 Domains</div>
           {profile.domains?.length > 0 ? (
-            profile.domains.map((d, i) => (
-              <div key={i} className="bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded px-3 py-1.5 text-sm font-mono mb-1.5">{d}</div>
-            ))
+            <div className="flex flex-wrap gap-1.5">
+              {profile.domains.map((d, i) => (
+                <div key={i} className="bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded px-3 py-1.5 text-sm font-mono" style={{ wordBreak: 'break-all' }}>{d}</div>
+              ))}
+            </div>
           ) : <div className="text-gray-600 text-sm">None detected</div>}
         </div>
       </div>
 
       {/* Posts & Related */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 pt-4 border-t border-gray-800">
+      <div className="space-y-4 mt-4 pt-4 border-t border-gray-800">
         <div>
           <div className="text-xs text-gray-500 uppercase tracking-wider mb-2 font-semibold">
             📝 Forum Posts ({profile.post_count ?? 0})
