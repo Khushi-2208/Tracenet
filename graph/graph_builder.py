@@ -114,7 +114,7 @@ class CharacteristicGraph:
         for node, data in self.nx_graph.nodes(data=True):
             if query_lower in str(node).lower():
                 results.append({
-                    "entity": node,
+                    "name": node,
                     "type": data.get("node_type", "Unknown")
                 })
         return results

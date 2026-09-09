@@ -97,13 +97,22 @@ python -m unittest discover -s tests
 
 ## 🚀 Running the TRACENET Application
 
-Launch the Streamlit Investigator Dashboard:
+### 1. Start the Backend API Server
 
 ```bash
-streamlit run app.py
+uvicorn backend.main:app --reload --port 8000
 ```
 
-The web dashboard will automatically open in your default browser at `http://localhost:8501`.
+The FastAPI backend will be available at `http://localhost:8000`.
+
+### 2. Start the Frontend Dev Server
+
+```bash
+cd frontend
+npm run dev
+```
+
+The web dashboard will be available at `http://localhost:5173`.
 
 ---
 

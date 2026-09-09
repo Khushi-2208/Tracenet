@@ -35,8 +35,8 @@ class TestTracenetPipeline(unittest.TestCase):
         self.assertGreater(len(cgraph.nx_graph.nodes), 0)
         profile = cgraph.get_username_profile("ShadowX", df)
         self.assertEqual(profile["username"], "ShadowX")
-        self.assertIn("PGP_KEY_001_ALPHA", profile["pgp_keys"])
-        self.assertIn("WALLET_BTC_9901_SEC", profile["wallets"])
+        self.assertIn("PGP_KEY_001", profile["pgp_keys"])
+        self.assertIn("WALLET_BTC_001", profile["wallets"])
         self.assertIn("DarkWolf", profile["related_usernames"])
         print("\n[PASS] Characteristic Graph profile query for ShadowX verified!")
 
@@ -49,7 +49,7 @@ class TestTracenetPipeline(unittest.TestCase):
         shadow_dark = sim_matrix.get(("ShadowX", "DarkWolf"))
         self.assertIsNotNone(shadow_dark)
         self.assertGreaterEqual(shadow_dark, 0.70, f"Expected high writing similarity between ShadowX and DarkWolf, got {shadow_dark}")
-        print(f"\n[PASS] Stylometry Engine ({meta['engine']}): ShadowX ↔ DarkWolf Similarity = {shadow_dark}")
+        print(f"\n[PASS] Stylometry Engine ({meta['engine']}): ShadowX <-> DarkWolf Similarity = {shadow_dark}")
 
     def test_04_confidence_scoring(self):
         df, _ = load_and_preprocess_csv(self.sample_csv_path)
@@ -66,7 +66,7 @@ class TestTracenetPipeline(unittest.TestCase):
         self.assertGreaterEqual(top_rel["confidence_score"], 0.80)
         self.assertEqual(top_rel["pgp_score"], 1.0)
         self.assertEqual(top_rel["wallet_score"], 1.0)
-        print(f"\n[PASS] Top Confidence Match: {top_rel['username_a']} ↔ {top_rel['username_b']} = {top_rel['confidence_percentage']}")
+        print(f"\n[PASS] Top Confidence Match: {top_rel['username_a']} <-> {top_rel['username_b']} = {top_rel['confidence_percentage']}")
 
     def test_05_report_exports(self):
         df, stats = load_and_preprocess_csv(self.sample_csv_path)

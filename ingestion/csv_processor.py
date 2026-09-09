@@ -16,7 +16,7 @@ class CSVProcessor:
         self.df = None
         self.stats = {}
 
-    def process() -> Tuple[pd.DataFrame, Dict[str, int]]:
+    def process(self) -> Tuple[pd.DataFrame, Dict[str, int]]:
         """
         Executes complete ingestion pipeline.
         Returns:
