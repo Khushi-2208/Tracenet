@@ -1,56 +1,47 @@
+import os
 import logging
 import numpy as np
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 logger = logging.getLogger(__name__)
-
-# Try sentence-transformers first, then transformers/torch, then TF-IDF fallback
-HAS_SENTENCE_TRANSFORMERS = False
-HAS_TRANSFORMERS = False
-
-try:
-    from sentence_transformers import SentenceTransformer
-    HAS_SENTENCE_TRANSFORMERS = True
-except ImportError:
-    pass
-
-if not HAS_SENTENCE_TRANSFORMERS:
-    try:
-        from transformers import AutoTokenizer, AutoModel
-        import torch
-        HAS_TRANSFORMERS = True
-    except ImportError:
-        pass
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 class TextEmbeddingEngine:
     """
     BERT/RoBERTa Dense Semantic & Stylometric Vector Extractor for TRACENET.
-    Generates text embedding vectors using sentence-transformers or pretrained transformer architectures.
+    Generates text embedding vectors using sentence-transformers, pretrained transformer architectures,
+    or a lightweight TF-IDF vectorizer for low-memory environments (e.g. Render free tier).
     """
     def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
         self.model_name = model_name
         self.model = None
         self.tokenizer = None
+        self.torch_module = None
         self.engine_type = "TF-IDF"
         self._initialize_model()
 
     def _initialize_model(self):
-        """Initializes the best available transformer embedding engine."""
-        low_memory = os.getenv("LOW_MEMORY_MODE", "false").lower() in ("true", "1", "yes")
+        """Initializes the embedding engine based on environment memory constraints."""
+        # Default LOW_MEMORY_MODE to true if on cloud or explicitly set
+        low_memory_env = os.getenv("LOW_MEMORY_MODE", "true").lower() in ("true", "1", "yes")
 
-        if not low_memory and HAS_SENTENCE_TRANSFORMERS:
+        if not low_memory_env:
+            # 1. Try sentence-transformers (Lazy Import to prevent pre-loading heavy PyTorch into RAM)
             try:
+                from sentence_transformers import SentenceTransformer
                 logger.info(f"Loading SentenceTransformer model: {self.model_name}...")
                 self.model = SentenceTransformer(self.model_name)
                 self.engine_type = f"SentenceTransformer ({self.model_name})"
                 return
             except Exception as e:
-                logger.warning(f"Could not load SentenceTransformer: {e}. Falling back to HuggingFace Transformers.")
+                logger.warning(f"Could not load SentenceTransformer: {e}")
 
-        if not low_memory and HAS_TRANSFORMERS:
+            # 2. Try transformers + torch
             try:
+                from transformers import AutoTokenizer, AutoModel
+                import torch
+                self.torch_module = torch
                 model_hf = "bert-base-uncased"
                 logger.info(f"Loading HuggingFace model: {model_hf}...")
                 self.tokenizer = AutoTokenizer.from_pretrained(model_hf)
@@ -58,8 +49,9 @@ class TextEmbeddingEngine:
                 self.engine_type = f"HuggingFace BERT ({model_hf})"
                 return
             except Exception as e:
-                logger.warning(f"Could not load HuggingFace Transformers: {e}. Falling back to TF-IDF vectorizer.")
+                logger.warning(f"Could not load HuggingFace Transformers: {e}")
 
+        # 3. Low-Memory Fallback: Character & word TF-IDF vectorizer (< 50MB RAM)
         logger.info("Using TF-IDF Stylometric Vectorizer (Low Memory Mode).")
         self.engine_type = "TF-IDF Vectorizer (Low Memory Mode)"
 
@@ -76,11 +68,11 @@ class TextEmbeddingEngine:
             embeddings = self.model.encode(texts, convert_to_numpy=True, show_progress_bar=False)
             return embeddings
 
-        if "HuggingFace BERT" in self.engine_type and self.model and self.tokenizer:
+        if "HuggingFace BERT" in self.engine_type and self.model and self.tokenizer and self.torch_module:
+            torch = self.torch_module
             inputs = self.tokenizer(texts, padding=True, truncation=True, max_length=128, return_tensors="pt")
             with torch.no_grad():
                 outputs = self.model(**inputs)
-                # Mean pooling across tokens
                 embeddings = outputs.last_hidden_state.mean(dim=1).cpu().numpy()
             return embeddings
 
