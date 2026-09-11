@@ -38,7 +38,9 @@ class TextEmbeddingEngine:
 
     def _initialize_model(self):
         """Initializes the best available transformer embedding engine."""
-        if HAS_SENTENCE_TRANSFORMERS:
+        low_memory = os.getenv("LOW_MEMORY_MODE", "false").lower() in ("true", "1", "yes")
+
+        if not low_memory and HAS_SENTENCE_TRANSFORMERS:
             try:
                 logger.info(f"Loading SentenceTransformer model: {self.model_name}...")
                 self.model = SentenceTransformer(self.model_name)
@@ -47,7 +49,7 @@ class TextEmbeddingEngine:
             except Exception as e:
                 logger.warning(f"Could not load SentenceTransformer: {e}. Falling back to HuggingFace Transformers.")
 
-        if HAS_TRANSFORMERS:
+        if not low_memory and HAS_TRANSFORMERS:
             try:
                 model_hf = "bert-base-uncased"
                 logger.info(f"Loading HuggingFace model: {model_hf}...")
@@ -58,8 +60,8 @@ class TextEmbeddingEngine:
             except Exception as e:
                 logger.warning(f"Could not load HuggingFace Transformers: {e}. Falling back to TF-IDF vectorizer.")
 
-        logger.info("Using TF-IDF Stylometric Vectorizer fallback.")
-        self.engine_type = "TF-IDF Vectorizer (Fallback)"
+        logger.info("Using TF-IDF Stylometric Vectorizer (Low Memory Mode).")
+        self.engine_type = "TF-IDF Vectorizer (Low Memory Mode)"
 
     def get_embeddings(self, texts: List[str]) -> np.ndarray:
         """
